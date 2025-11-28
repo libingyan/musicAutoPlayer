@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>NFC 自动播放</title>
+  </head>
+  <body style="margin:0;background:#000;color:#fff;font-family:sans-serif;">
+    <audio autoplay controls style="width:100%;">
+      <source src="Merry Merry Christmas Floriane.mp3" type="audio/mpeg">
+      您的浏览器不支持音频播放。
+    </audio>
+    <p>触碰 NFC 即可自动播放</p>
+  </body>
+</html>
