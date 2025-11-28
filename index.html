@@ -7,7 +7,7 @@
   <style>
     :root{
       /* ===== 换背景图只改这里 ===== */
-      bg.png;
+      bg.jpg;
       /* ========================== */
     }
     *{box-sizing:border-box;margin:0;padding:0}
@@ -83,7 +83,7 @@
   <h1>Merry Merry Christmas Floriane</h1>
 
   <div class="ctrl">
-    <button id="playPauseBtn">▶ 播放</button>
+    <button id="playPauseBtn">▶ PLAY</button>
   </div>
 
   <audio id="song" src="Merry Merry Christmas Floriane.mp3"></audio>
@@ -163,7 +163,7 @@
         requestAnimationFrame(updateLrc);
       }else{
         audio.pause();
-        btn.textContent='▶ 播放';
+        btn.textContent='▶ PLAY';
       }
     });
 
