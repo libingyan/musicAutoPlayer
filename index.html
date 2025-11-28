@@ -1,14 +1,121 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8"/>
-    <title>NFC 自动播放</title>
-  </head>
-  <body style="margin:0;background:#000;color:#fff;font-family:sans-serif;">
-    <audio autoplay controls style="width:100%;">
-      <source src="Merry Merry Christmas Floriane.mp3" type="audio/mpeg">
-      您的浏览器不支持音频播放。
-    </audio>
-    <p>触碰 NFC 即可自动播放</p>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Merry Merry Christmas Floriane</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(135deg,#001844 0%, #000 100%);
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial;
+      color:#fff;
+      overflow:hidden;
+      position:relative;
+    }
+    h1{font-size:1.6rem;margin-bottom:1rem;text-align:center}
+    button{
+      padding:0.75rem 2rem;
+      font-size:1.1rem;
+      border:none;
+      border-radius:30px;
+      background:#d62828;
+      color:#fff;
+      cursor:pointer;
+      margin-bottom:1.5rem;
+      box-shadow:0 4px 15px rgba(214,40,40,.4);
+    }
+    button:active{transform:scale(.95)}
+    audio{width:260px;max-width:90vw}
+    #lyrics{
+      width:90vw;
+      max-width:400px;
+      height:50vh;
+      overflow-y:auto;
+      text-align:center;
+      font-size:1.05rem;
+      line-height:1.8;
+      white-space:pre-line;
+      color:#ffe9d6;
+    }
+    /* 极简单雪 */
+    .snow{
+      position:absolute;
+      top:-10px;
+      background:#fff;
+      border-radius:50%;
+      opacity:0.8;
+      animation:fall linear infinite;
+    }
+    @keyframes fall{
+      to{transform:translateY(100vh) rotate(360deg)}
+    }
+  </style>
+</head>
+<body>
+  <h1>Merry Merry Christmas Floriane</h1>
+
+  <button id="playBtn">▶ 播放</button>
+  <!-- 音频文件放在同一目录即可，改文件名 -->
+  <audio id="song" src="Merry Merry Christmas Floriane.mp3"></audio>
+
+  <div id="lyrics">[Verse 1]
+Snowflakes fall on the window
+Candlelight in your eyes
+Laughter spills in the kitchen
+Cookies baking
+Time flies
+
+[Chorus]
+Merry Merry Christmas Floriane
+Sing it loud
+Sing it again
+Merry Merry Christmas Floriane
+Fill the room with joy
+Amen
+Merry Merry Christmas Floriane
+This is your song
+My friend
+
+[Verse 2]
+Paper stars on the ceiling
+Little gifts by the tree
+All the love in the living room
+Feels like home
+Feels so free
+
+[Outro]
+Merry Merry Christmas Floriane
+One more time
+All the way
+Merry Merry Christmas Floriane
+Carry this smile through every day</div>
+
+  <script>
+    const btn = document.getElementById('playBtn');
+    const song = document.getElementById('song');
+    btn.addEventListener('click', () => {
+      song.play();
+      btn.textContent = '♪ 播放中...';
+      btn.disabled = true;
+    });
+
+    /* 随手下雪 */
+    function createSnow(){
+      const s = document.createElement('div');
+      s.className = 'snow';
+      s.style.left = Math.random() * 100 + '%';
+      s.style.width = s.style.height = Math.random() * 4 + 2 + 'px';
+      s.style.animationDuration = Math.random() * 4 + 3 + 's';
+      document.body.appendChild(s);
+      setTimeout(() => s.remove(), 7000);
+    }
+    setInterval(createSnow, 150);
+  </script>
+</body>
 </html>
