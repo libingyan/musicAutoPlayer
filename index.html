@@ -7,7 +7,7 @@
   <style>
     :root{
       /* ===== 换背景图只改这里 ===== */
-      --bg-url:url('YOUR_IMAGE_HERE.jpg');
+      bg.png;
       /* ========================== */
     }
     *{box-sizing:border-box;margin:0;padding:0}
@@ -95,41 +95,37 @@
   <script>
     /* ====== 时间轴（秒 : 歌词） 总105s ====== */
     const lrc=[
-      {t:0,txt:"[Verse 1]"},
-      {t:4,txt:"Snowflakes fall on the window"},
-      {t:8,txt:"Candlelight in your eyes"},
-      {t:12,txt:"Laughter spills in the kitchen"},
-      {t:16,txt:"Cookies baking"},
-      {t:19,txt:"Time flies"},
-      {t:23,txt:"[Chorus]"},
+
+      {t:8,txt:"Snowflakes fall on the window"},
+      {t:13,txt:"Candlelight in your eyes"},
+      {t:18 ,txt:"Laughter spills in the kitchen"},
+      {t:21,txt:"Cookies baking"},
+      {t:24,txt:"Time flies"},
+
       {t:27,txt:"Merry Merry Christmas Floriane"},
       {t:31,txt:"Sing it loud"},
-      {t:34,txt:"Sing it again"},
-      {t:37,txt:"Merry Merry Christmas Floriane"},
-      {t:41,txt:"Fill the room with joy"},
-      {t:44,txt:"Amen"},
-      {t:47,txt:"Merry Merry Christmas Floriane"},
-      {t:51,txt:"This is your song"},
+      {t:33,txt:"Sing it again"},
+      {t:36 ,txt:"Merry Merry Christmas Floriane"},
+      {t:40,txt:"Fill the room with joy"},
+      {t:43,txt:"Amen"},
+      {t:46,txt:"Merry Merry Christmas Floriane"},
+      {t:50,txt:"This is your song"},
       {t:54,txt:"My friend"},
-      {t:58,txt:"[Verse 2]"},
-      {t:62,txt:"Paper stars on the ceiling"},
-      {t:66,txt:"Little gifts by the tree"},
-      {t:70,txt:"All the love in the living room"},
-      {t:74,txt:"Feels like home"},
-      {t:77,txt:"Feels so free"},
-      {t:81,txt:"[Chorus]"},
-      {t:85,txt:"Merry Merry Christmas Floriane"},
-      {t:89,txt:"Sing it loud"},
-      {t:92,txt:"Sing it again"},
-      {t:95,txt:"Merry Merry Christmas Floriane"},
-      {t:99,txt:"Fill the room with joy"},
-      {t:102,txt:"Amen"},
-      {t:105,txt:"[Outro]"},
-      {t:109,txt:"Merry Merry Christmas Floriane"},
-      {t:113,txt:"One more time"},
-      {t:116,txt:"All the way"},
-      {t:119,txt:"Merry Merry Christmas Floriane"},
-      {t:123,txt:"Carry this smile through every day"}
+
+      {t:55,txt:"Paper stars on the ceiling"},
+      {t:60,txt:"Little gifts by the tree"},
+      {t:65,txt:"All the love in the living room"},
+      {t:69txt:"Feels like home"},
+      {t:71,txt:"Feels so free"},
+
+      {t:74,txt:"Merry Merry Christmas Floriane"},
+      {t:78,txt:"One more time"},
+      {t:82,txt:"All the way"},
+      {t:84,txt:"Merry Merry Christmas Floriane"},
+      {t:89,txt:"Carry this smile through every day"},
+    
+      {t:94,txt:"Merry Merry Christmas Floriane"},
+      {t:99,txt:"This is the song my friend"},
     ];
 
     const audio=document.getElementById('song');
@@ -163,7 +159,7 @@
     btn.addEventListener('click',()=>{
       if(audio.paused){
         audio.play();
-        btn.textContent='❚❚ 暂停';
+        btn.textContent='❚❚ Pause';
         requestAnimationFrame(updateLrc);
       }else{
         audio.pause();
