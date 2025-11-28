@@ -60,18 +60,17 @@
 <body>
   <h1>Merry Merry Christmas Floriane</h1>
 
-  <button id="playBtn">▶ 播放</button>
+  <button id="playBtn">▶ PLAY</button>
   <!-- 音频文件放在同一目录即可，改文件名 -->
   <audio id="song" src="Merry Merry Christmas Floriane.mp3"></audio>
 
-  <div id="lyrics">[Verse 1]
+  <div id="lyrics">
 Snowflakes fall on the window
 Candlelight in your eyes
 Laughter spills in the kitchen
 Cookies baking
 Time flies
 
-[Chorus]
 Merry Merry Christmas Floriane
 Sing it loud
 Sing it again
@@ -82,14 +81,12 @@ Merry Merry Christmas Floriane
 This is your song
 My friend
 
-[Verse 2]
 Paper stars on the ceiling
 Little gifts by the tree
 All the love in the living room
 Feels like home
 Feels so free
 
-[Outro]
 Merry Merry Christmas Floriane
 One more time
 All the way
@@ -101,7 +98,7 @@ Carry this smile through every day</div>
     const song = document.getElementById('song');
     btn.addEventListener('click', () => {
       song.play();
-      btn.textContent = '♪ 播放中...';
+      btn.textContent = '♪ ～Playing...';
       btn.disabled = true;
     });
 
